@@ -49,10 +49,7 @@ app.post('/dweet/user/:posted_by' , (req,res) => {
         }
     })
     
-    //const createuser = async () => {
-    //    const username = await u1.save(); 
-    //    res.send("Thanks for giving the  username. It has been saved as"+ username.Posted_by);
-    //}
+
       
     //createuser();
     const resultofpostedby = req.params.posted_by;
@@ -60,15 +57,6 @@ app.post('/dweet/user/:posted_by' , (req,res) => {
     if(postedlength > 50 ||  postedlength < 6){
         res.send("The user name is not valid. The length should be between 6 and 50 characters")
     }
-// const result4 = joi.validate(req.body , schema)
-//const fullresult = req.params.posted_by;
-//if (fullresult.error){
-//    res.send("The user name is not valid it should between 6-30 chracters");
-//}
-//else{
-//    res.send("Thanks for giving the username! We have noted your user name as - " + fullresult);
-//}
-//})
 })
 
 var port = 3000;
