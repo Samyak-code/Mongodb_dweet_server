@@ -1,5 +1,4 @@
 const express = require('express');
-const joi = require('joi');
 const app = express();
 const mongoose = require('mongoose');
 const AuthRoute = require('./Auth')
