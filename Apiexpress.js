@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
-const AuthRoute = require('./Auth')
 mongoose.connect("mongodb+srv://Crudattempt1:Crudattempt1@crudapi.0dmke.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", {useNewUrlParser: true, useUnifiedTopology: true})
 .then( () => console.log("") )
 .catch((err) => console.log(err));
@@ -49,8 +48,6 @@ app.post('/dweet/user/:posted_by' , (req,res) => {
     })
     
 
-      
-    //createuser();
     const resultofpostedby = req.params.posted_by;
     var postedlength = resultofpostedby.length;
     if(postedlength > 50 ||  postedlength < 6){
@@ -61,7 +58,6 @@ app.post('/dweet/user/:posted_by' , (req,res) => {
 var port = 3000;
  app.get('/', (req,res) => {
  res.send("CRUD API")
-//  app.use('/api', AuthRoute)
  })
 
  app.get('/dweet/create/:dweetid' , (req,res) => {
@@ -79,7 +75,6 @@ var port = 3000;
     }; 
     createDocument();
 
-    // update dweet
      app.get('/dweet/:updatedweetids/update/:newdweet' , (req,res) =>  {
          var updateids = req.params.updatedweetids;
          var newdweetchange = req.params.newdweet;
